@@ -6,4 +6,4 @@ To tests using page: [TestPage]([http://automationpractice.com/index.php](https:
 
 ## Technologies:
 - [Python](https://www.python.org/)
-- [Unittest — Unit testing framework]([https://docs.python.org/3/library/unittest.html])
+- [Unittest — Unit testing framework](https://docs.python.org/3/library/unittest.html)
