@@ -2,7 +2,7 @@
 This project was created at workshop on event Automatyzacja Testów w Praktyce with Dawid Pacia. 
 
 
-To tests using page: [TestPage]([http://automationpractice.com/index.php](https://automationexercise.com/))
+To tests using page: [TestPage](https://automationexercise.com/)
 
 ## Technologies:
 - [Python](https://www.python.org/)
