@@ -14,9 +14,11 @@ class TestCart(unittest.TestCase):
 
     def setUp(self) -> None:
         option = webdriver.ChromeOptions()
-        option.add_argument("--headless")
+        #option.add_argument("--headless")
+        option.add_argument("--start-maximized")
         self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=option)
         self.driver.get("https://automationexercise.com/")
+
 
         self.login_page = LoginPage(self.driver)
         self.products_page = ProductsPage(self.driver)

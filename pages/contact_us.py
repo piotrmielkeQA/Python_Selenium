@@ -10,7 +10,7 @@ class ContactUsPage(BasePage):
     subject_field_selector = (By.CSS_SELECTOR, "input[data-qa='subject']")
     message_field_selector = (By.CSS_SELECTOR, "textarea[data-qa='message']")
     submit_button_selector = (By.CSS_SELECTOR, "input[data-qa='submit-button']")
-    alert_success_information = (By.CLASS_NAME, "alert-success")
+    alert_success_information = (By.CLASS_NAME, "status alert alert-success")
 
     def submit_message_on_contact_us(self, name, email, subject, message):
         self.driver.find_element(*self.contact_us_tab_selector).click()
@@ -19,6 +19,7 @@ class ContactUsPage(BasePage):
         self.driver.find_element(*self.subject_field_selector).send_keys(subject)
         self.driver.find_element(*self.message_field_selector).send_keys(message)
         self.driver.find_element(*self.submit_button_selector).click()
+
 
 
 
