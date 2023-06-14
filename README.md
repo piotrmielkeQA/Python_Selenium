@@ -1,6 +1,6 @@
 ## Introduction
 This project was created at workshop on event Automatyzacja Testów w Praktyce with Dawid Pacia. 
-
+The project is still developed by me.
 
 To tests using page: [TestPage](https://automationexercise.com/)
 
