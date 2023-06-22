@@ -6,11 +6,12 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
-from pages.login_page import LoginPage
 from pages.menu_page import MenuPage
+from pages.sign_up_page import SignUpPage
 
 
-class Login(unittest.TestCase):
+class SignUp(unittest.TestCase):
+
     def setUp(self) -> None:
         option = webdriver.ChromeOptions()
 
@@ -18,25 +19,18 @@ class Login(unittest.TestCase):
         self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=option)
         self.driver.get("https://automationexercise.com/")
 
-        self.login_page = LoginPage(self.driver)
+        self.sign_up_page = SignUpPage(self.driver)
         self.menu_page = MenuPage(self.driver)
 
-    def test_login_success(self):
+    def test_create_account(self):
         # Given
         self.menu_page.open_login_page()
-        # When
-        self.login_page.fill_data_to_login("seleniumremote@gmail.com", "tester")
-        self.login_page.click_login_button()
         # Then
-        self.login_page.check_logout_button_is_displayed()
+        self.sign_up_page.go_to_create_account_page("Piotr")
+        self.sign_up_page.fill_required_data_on_create_account_form("1234", "Piotr", "Mielke", "Company", "Address",
+                                                                    "State", "City", "12345", "12345678")
+        self.sign_up_page.click_create_account_button()
 
-    def test_login_failed(self):
-        # Given
-        self.menu_page.open_login_page()
-        # When
-        self.login_page.fill_data_to_login("test@gmail.com", "tester")
-        # Then
-        self.login_page.check_alert_information_about_fail_logged()
 
     def tearDown(self) -> None:
         self.driver.quit()
