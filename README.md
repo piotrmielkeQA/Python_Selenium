@@ -12,4 +12,4 @@ To tests using page: [TestPage](https://automationexercise.com/)
 ## Sample tests
 - Tests login (login success, login failed) 
 - Form tests (submit message from form Contact us)
-- Filter tests
+- Register account tests
